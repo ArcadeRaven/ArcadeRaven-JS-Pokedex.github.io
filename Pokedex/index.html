@@ -108,7 +108,7 @@
         }
     
         searchButton.addEventListener ("click", ()=> { /* when the search button is clicked, call check pokemon */
-        getPokemon(searchBox.value); /* calls getPokemon with the data from the search box */
+        getPokemon(searchBox.value.toLowerCase()); /* calls getPokemon with the data from the search box */
         })
       
     </script>
