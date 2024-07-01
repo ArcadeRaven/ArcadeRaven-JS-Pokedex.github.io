@@ -118,10 +118,9 @@ h2 {
   color: #180dac;
 }
 
-/* 
 .pokemon {
   display: none; /* Hides all pokemon info, this is overridden in the JS in the HTML file with the line: document.querySelector(".pokemon").style.display = "block"; When a pokemon is searched, JS blocks this class's CSS properties, thus displaying the info */
-/* } */
+}
 
 .error {
   text-align: left;
