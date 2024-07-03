@@ -34,6 +34,7 @@
             <div>
               <h2>Type</h2>
               <p class="type1">Ghost</p>
+              <p class="type2">Poison</p>
             </div>
   
             <div>
@@ -52,6 +53,11 @@
             <div>
               <h2>Ability</h2>
               <p class="ability">Cursed-body</p>
+            </div>
+
+            <div>
+              <h2>Hidden Ability</h2>
+              <p class="hiddenAbility">Imposter</p>
             </div>
         </div>
         
@@ -101,6 +107,17 @@
               document.querySelector(".height").innerHTML = data.height / 10 + " m";
               document.querySelector(".weight").innerHTML = data.weight / 10 + " kg";
               document.querySelector(".ability").innerHTML = abilityUpper;
+
+              // Create types that may be undefined
+              var type2 = data.types[1]?.type?.name; // checks to see if the type is defined, return the type if true, return undefined if false
+              if (data.types[1]?.type?.name)
+                var type2 = type2[0].toUpperCase() + type2.slice(1);
+              document.querySelector(".type2").innerHTML = type2;
+
+              var hiddenAbility = data.abilities[1]?.ability?.name;
+              if (data.abilities[1]?.ability?.name)
+                var hiddenAbility = hiddenAbility[0].toUpperCase() + hiddenAbility.slice(1);
+              document.querySelector(".hiddenAbility").innerHTML = hiddenAbility;
 
               document.querySelector(".pokemon").style.display = "block"; 
               document.querySelector(".error").style.display = "none";
