@@ -32,10 +32,11 @@ body {
   outline: 0;
   background: #e6d596;
   color: #555;
-  padding: 10px 25px;
+  padding: 10px 15px;
   height: 60px;
   border-radius: 30px; /* makes it pretty and round */
-  flex: 1;
+  flex: auto;
+  max-width: 400px; /* fixes bar to adjust by screen size to not squish the search icon in mobile */
   margin-right: 16px;
   font-size: 18px;
 }
@@ -45,13 +46,15 @@ body {
   outline: 0;
   background: #e6d596;
   border-radius: 50%; /* circle */
-  width: 60px;
-  height: 60px;
+  max-width: 100%; /* icon container shrinks based on screen size for mobile */
+  height: auto;
   cursor: pointer;
 }
 
 .search button img {
-  width: 48px;
+  width: 100%;
+  max-width: 48px; /* icon image shrinks based on screen size for mobile */
+  height: auto;
 }
 
 .sprite_container {
@@ -76,14 +79,16 @@ body {
 }
 
 #poke-sprite-regular {
-  width: 170px;
-  height: 170px;
+  width: 90%;
+  max-width: 150px;
+  height: auto;
   image-rendering: pixelated;
 }
 
 #poke-sprite-shiny {
-  width: 170px;
-  height: 170px;
+  width: 90%;
+  max-width: 150px;
+  height: auto;
   image-rendering: pixelated;
 }
 
