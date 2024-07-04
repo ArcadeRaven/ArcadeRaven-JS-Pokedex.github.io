@@ -59,6 +59,26 @@
               <h2>Hidden Ability</h2>
               <p class="hiddenAbility">Imposter</p>
             </div>
+
+            <div>
+              <h2>HP</h2>
+              <p class="hp">HP</p>
+              <h2>ATK</h2>
+              <p class="atk">ATK</p>
+              <h2>DEF</h2>
+              <p class="def">DEF</p>
+            </div>
+            <div>
+              <h2>SPD</h2>
+              <p class="spd">SPEED</p>
+              <h2>SPATK</h2>
+              <p class="spAtk">SPATK</p>
+              <h2>SPDEF</h2>
+              <p class="spDef">SPDEF</p>
+
+            </div>
+
+            </div>
         </div>
         
     </div>
@@ -118,6 +138,22 @@
               if (data.abilities[1]?.ability?.name)
                 var hiddenAbility = hiddenAbility[0].toUpperCase() + hiddenAbility.slice(1);
               document.querySelector(".hiddenAbility").innerHTML = hiddenAbility;
+
+              // base stats
+              hp = data.stats[0].base_stat;
+              atk = data.stats[1].base_stat;
+              def = data.stats[2].base_stat;
+              spAtk = data.stats[3].base_stat;
+              spDef = data.stats[4].base_stat;
+              spd = data.stats[5].base_stat;
+
+              document.querySelector(".hp").innerHTML = hp;
+              document.querySelector(".atk").innerHTML = atk;
+              document.querySelector(".def").innerHTML = def;
+              document.querySelector(".spAtk").innerHTML = spAtk;
+              document.querySelector(".spDef").innerHTML = spDef;
+              document.querySelector(".spd").innerHTML = spd;
+
 
               document.querySelector(".pokemon").style.display = "block"; 
               document.querySelector(".error").style.display = "none";
