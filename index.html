@@ -30,54 +30,56 @@
         <h1 class="name">Gengar</h1>
         
         <div class="stat_container">
-          <div class="details_row1">
-            <div>
-              <h2>Type</h2>
-              <p class="type1">Ghost</p>
-              <p class="type2">Poison</p>
-            </div>
-  
-            <div>
-              <h2>Height</h2>
-              <p class="height">1.5 m</p>
-            </div>
-  
-            <div>
-              <h2>Weight</h2>
-              <p class="weight">40.5 kg</p>
-            </div>
+            <div class="details_row1">
+              <div>
+                <h2>Type</h2>
+                <p class="type1">Ghost</p>
+                <p class="type2">Poison</p>
+              </div>
+    
+              <div>
+                <h2>Height</h2>
+                <p class="height">1.5 m</p>
+              </div>
+    
+              <div>
+                <h2>Weight</h2>
+                <p class="weight">40.5 kg</p>
+              </div>
             </div>
   
             <div class="details_row2">
-  
-            <div>
-              <h2>Ability</h2>
-              <p class="ability">Cursed-body</p>
+    
+              <div>
+                <h2>Ability</h2>
+                <p class="ability">Cursed-body</p>
+                <a href="#" id="aLink">Description</a>
+              </div>
+
+              <div>
+                <h2>Hidden Ability</h2>
+                <p class="hiddenAbility">Imposter</p>
+                <a href="#" id="haLink">Description</a>
+              </div>
             </div>
 
-            <div>
-              <h2>Hidden Ability</h2>
-              <p class="hiddenAbility">Imposter</p>
-            </div>
-
-            <div>
-              <h2>HP</h2>
-              <p class="hp">HP</p>
-              <h2>ATK</h2>
-              <p class="atk">ATK</p>
-              <h2>DEF</h2>
-              <p class="def">DEF</p>
-            </div>
-            <div>
-              <h2>SPD</h2>
-              <p class="spd">SPEED</p>
-              <h2>SPATK</h2>
-              <p class="spAtk">SPATK</p>
-              <h2>SPDEF</h2>
-              <p class="spDef">SPDEF</p>
-
-            </div>
-
+            <div class="details_row3">
+                <div>
+                  <h2>HP</h2>
+                  <p class="hp">HP</p>
+                  <h2>ATK</h2>
+                  <p class="atk">ATK</p>
+                  <h2>DEF</h2>
+                  <p class="def">DEF</p>
+                </div>
+                <div>
+                  <h2>SPD</h2>
+                  <p class="spd">SPEED</p>
+                  <h2>SPATK</h2>
+                  <p class="spAtk">SPATK</p>
+                  <h2>SPDEF</h2>
+                  <p class="spDef">SPDEF</p>
+                </div>
             </div>
         </div>
         
@@ -138,6 +140,13 @@
               if (data.abilities[1]?.ability?.name)
                 var hiddenAbility = hiddenAbility[0].toUpperCase() + hiddenAbility.slice(1);
               document.querySelector(".hiddenAbility").innerHTML = hiddenAbility;
+
+              // hyper link abilities using https://pokemondb.net/ability/${ability}. That way someone can see what the ability does.
+              var abilityUrl = document.getElementById("aLink");
+              abilityUrl.setAttribute('href', `https://pokemondb.net/ability/${ability}`);
+
+              var abilityUrl = document.getElementById("haLink");
+              abilityUrl.setAttribute('href', `https://pokemondb.net/ability/${hiddenAbility}`);
 
               // base stats
               hp = data.stats[0].base_stat;
